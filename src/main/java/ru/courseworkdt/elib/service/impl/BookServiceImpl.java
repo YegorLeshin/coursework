@@ -10,30 +10,29 @@ import java.util.List;
 
 @Service
 public class BookServiceImpl implements BookService {
-    @Autowired
+
     private BookRepository bookRepository;
 
     @Override
+    @Transactional
     public List<Book> findAll() {
         return bookRepository.findAll();
     }
 
     @Override
     @Transactional
-    public void create(Book book) {
-        bookRepository.save(book);
+    public Book create(Book book) { return bookRepository.save(book); }
+
+    @Override
+    @Transactional
+    public void deleteById(Long id) {
+        bookRepository.deleteById(id);
     }
 
     @Override
     @Transactional
-    public void delete(Book book) {
-        bookRepository.delete(book);
-    }
-
-    @Override
-    @Transactional
-    public void update(Book book) {
-        bookRepository.save(book);
+    public Book update(Book book) {
+        return bookRepository.save(book);
     }
 
     @Override
