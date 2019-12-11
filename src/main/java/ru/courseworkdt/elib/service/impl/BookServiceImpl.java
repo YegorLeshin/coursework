@@ -1,10 +1,11 @@
-package ru.courseworkdt.elib.service;
+package ru.courseworkdt.elib.service.impl;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import ru.courseworkdt.elib.Model.Book;
 import ru.courseworkdt.elib.repository.BookRepository;
+import ru.courseworkdt.elib.service.BookService;
 
 import java.util.List;
 

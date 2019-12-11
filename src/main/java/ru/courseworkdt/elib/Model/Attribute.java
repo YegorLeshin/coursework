@@ -8,10 +8,10 @@ import javax.persistence.*;
 
 @Data
 @Entity
-@Table(name = "atributS")
+@Table(name = "attributes")
 @AllArgsConstructor
 @NoArgsConstructor
-public class AtributS {
+public class Attribute {
     @Id
     @Column(name = "id")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -21,6 +21,7 @@ public class AtributS {
     private String name;
 
     @Column(name = "type")
-    private String type;
+    @Enumerated(EnumType.STRING)
+    private AttributeValueType type;
 
 }

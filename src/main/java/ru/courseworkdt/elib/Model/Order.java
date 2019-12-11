@@ -1,36 +1,32 @@
 package ru.courseworkdt.elib.Model;
 
+import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
+import java.util.Date;
 
 @Entity
 @Data
 @Table(name = "order")
+@AllArgsConstructor
+@NoArgsConstructor
 public class Order {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long Id;
-    private double summa;
+    @Column(name = "id")
+    private Long id;
 
-    public Order() {}
-    public Order(double summa) {
-        this.summa = summa;
-    }
+    @Column(name = "date")
+    private Date date;
 
-    public Long getId() {
-        return Id;
-    }
+    @ManyToOne(fetch = FetchType.EAGER, cascade = {CascadeType.ALL})
+    @JoinColumn(name = "user_id", nullable = false)
+    private User user;
 
-    public void setId(Long id) {
-        Id = id;
-    }
-
-    public double getSumma() {
-        return summa;
-    }
-
-    public void setSumma(double summa) {
-        this.summa = summa;
-    }
+    @ManyToOne(fetch = FetchType.EAGER, cascade = {CascadeType.ALL})
+    @JoinColumn(name = "license_id", nullable = false)
+    private License license;
 }

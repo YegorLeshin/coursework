@@ -5,9 +5,13 @@ import ru.courseworkdt.elib.Model.User;
 import java.util.List;
 
 public interface UserService {
- List<User> findAll();
-        void create(User user);
-        void delete(User user);
-        void update(User user);
-        User findById(long id);
+    List<User> findAll();
+
+    User create(User user);
+
+    void deleteById(Long id);
+
+    User update(User user);
+
+    User findById(long id);
 }

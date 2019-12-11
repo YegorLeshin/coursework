@@ -1,4 +1,4 @@
-package ru.courseworkdt.elib.converters;
+package ru.courseworkdt.elib.converters.dto;
 
 import org.springframework.core.convert.converter.Converter;
 import org.springframework.stereotype.Component;
@@ -15,7 +15,7 @@ public class UserDtoConverter implements Converter<User, UserDto> {
         userDto.setEmail(user.getEmail());
         userDto.setPhone(user.getPhone());
         userDto.setId(user.getId());
-        userDto.setActive(user.isActive());
+        userDto.setExpiredLicense_date(user.getExpiredLicense_date());
         return userDto;
     }
 }

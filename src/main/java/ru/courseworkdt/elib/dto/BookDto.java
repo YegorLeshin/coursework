@@ -1,4 +1,4 @@
-package ru.courseworkdt.elib.controller;
+package ru.courseworkdt.elib.dto;
 
 import lombok.Data;
 

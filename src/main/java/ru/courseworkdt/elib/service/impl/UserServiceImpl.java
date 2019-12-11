@@ -1,10 +1,11 @@
-package ru.courseworkdt.elib.service;
+package ru.courseworkdt.elib.service.impl;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import ru.courseworkdt.elib.Model.User;
 import ru.courseworkdt.elib.repository.UserRepository;
+import ru.courseworkdt.elib.service.UserService;
 
 import java.util.List;
 
@@ -36,7 +37,7 @@ public class UserServiceImpl implements UserService {
     @Override
     @Transactional
     public User findById(long id) {
-        return null;
+        return userRepository.findById(id).orElse(null);
     }
 
     @Autowired

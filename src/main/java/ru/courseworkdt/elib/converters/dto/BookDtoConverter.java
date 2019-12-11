@@ -1,4 +1,4 @@
-package ru.courseworkdt.elib.converters;
+package ru.courseworkdt.elib.converters.dto;
 
 import org.springframework.core.convert.converter.Converter;
 import org.springframework.stereotype.Component;
