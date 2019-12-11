@@ -1,4 +1,4 @@
 package ru.courseworkdt.elib.Model;
 
-public class BookAtributValue {
+public enum AttributeValueType {
 }

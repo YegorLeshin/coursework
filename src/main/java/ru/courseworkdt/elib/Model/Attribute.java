@@ -8,22 +8,19 @@ import javax.persistence.*;
 
 @Data
 @Entity
-@Table(name = "atribut")
+@Table(name = "atributS")
 @AllArgsConstructor
 @NoArgsConstructor
-public class Atribut {
+public class AtributS {
     @Id
     @Column(name = "id")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    @Column(name = "obem")
-    private String obem;
-    @Column(name = "format")
-    private String format;
-    @Column(name = "kolStranic")
-    private String kolStranic;
-    @Column(name = "cena")
-    private double cena;
 
+    @Column(name = "name")
+    private String name;
+
+    @Column(name = "type")
+    private String type;
 
 }
