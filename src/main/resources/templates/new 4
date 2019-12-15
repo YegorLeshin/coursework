@@ -1,0 +1,24 @@
+ <h3 class="title" id="categories">Категории</h3>
+                <li><a href="#" class="sider-menu-link">Приключения</a></li>
+                <li><a href="#" class="sider-menu-link">Научные работы</a></li>
+                <li><a href="#" class="sider-menu-link">Физика</a></li>
+                <li><a href="#" class="sider-menu-link">Классика</a></li>
+                <li><a href="#" class="sider-menu-link active">Фантастика</a></li>
+                <li><a href="#" class="sider-menu-link">Фэнтези</a></li>
+                <li><a href="#" class="sider-menu-link">Детективы</a></li>
+                <li><a href="#" class="sider-menu-link">Ужасы</a></li>
+                <li><a href="#" class="sider-menu-link">Триллеры</a></li>
+                <li><a href="#" class="sider-menu-link">Романы</a></li>
+                <li><a href="#" class="sider-menu-link">Стихи</a></li>
+                <li><a href="#" class="sider-menu-link">Сказки</a></li>
+                <li><a href="#" class="sider-menu-link">Загадки</a></li>
+                <li><a href="#" class="sider-menu-link">Программирование</a></li>
+
+                <h3 class="title">Авторы</h3>
+                <li><a href="#" class="sider-menu-link">Пушкин</a></li>
+                <li><a href="#" class="sider-menu-link">Достоевский</a></li>
+                <li><a href="#" class="sider-menu-link">Дебров</a></li>
+                <li><a href="#" class="sider-menu-link">Петров</a></li>
+                <li><a href="#" class="sider-menu-link">Сисеро</a></li>
+                <li><a href="#" class="sider-menu-link">Гослинг</a></li>
+                <li><a href="#" class="sider-menu-link">Толян</a></li>

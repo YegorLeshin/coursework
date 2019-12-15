@@ -37,7 +37,7 @@ public class BookAttributeValueController {
         return bookAttributeValueDtoConverter.convert(bookAttributeValueService.update(bookAttributeValue));
     }
 
-    @DeleteMapping("/book/{id}")
+    @DeleteMapping("/bookAttributeValue/{id}")
     public String deleteBook(@PathVariable("id") Long id) {
         bookAttributeValueService.deleteById(id);
         return "delete";

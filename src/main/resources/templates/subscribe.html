@@ -20,7 +20,7 @@
             <ul class="menu header__menu">
                 <li class="header__menu-item"><a href="index.html" class="header__menu-link">Главная</a></li>
                 <li class="header__menu-item"><a href="list_books.html" class="header__menu-link">Список книг</a></li>
-                <li class="header__menu-item"><a href="subscribe.html" class="header__menu-link">Подписка</a></li>
+                <li class="header__menu-item"><a href="subscribe.html" class="header__menu-link active">Подписка</a></li>
                 <li class="header__menu-item"><a href="about_us.html" class="header__menu-link">О нас</a></li>
                 <li class="header__menu-item"><a href="contacts.html" class="header__menu-link">Контакты</a></li>
             </ul>
@@ -38,30 +38,29 @@
 
     <div class="section main welcome">
         <div class="width main_container">
-            <form class="form" action="#" method="POST">
-                <h2 class="title form_title">Регистрация <b>аккаунта</b></h2>
-                <h3 class="subtitle form_subtitle">Заполните все поля</h3>
+            <form class="form plans" action="#" method="POST">
+                <h2 class="title form_title">Подписка</h2>
+                <h3 class="subtitle form_subtitle">Пожалуйста, выберите план</h3>
+                <div class="grid-two">
+                    <div class="form__field form__field-radio">
+                        <label class="form__field-block" for="_plan1">
+                            <h3 class="form__field-block-title">1 месяц</h3>
+                            <span class="form__field-block-price">900 руб</span>
+                        </label>
+                        <input type="radio" name="plan" id="_plan1" class="form__field-hidden" value="1">
+                    </div>
+
+                    <div class="form__field form__field-radio">
+                        <label class="form__field-block" for="_plan2">
+                            <h3 class="form__field-block-title">1 год</h3>
+                            <span class="form__field-block-price">7 890 руб</span>
+                        </label>
+                        <input type="radio" name="plan" id="_plan2" class="form__field-hidden" value="2">
+                    </div>
+                </div>
 
                 <div class="form__field">
-                    <label for="_email" class="form__field-label">Email:</label>
-                    <input type="email" name="email" class="form__field-input" placeholder="Введите email" id="_email">
-                </div>
-                <div class="form__field">
-                    <label for="_name" class="form__field-label">Имя:</label>
-                    <input type="text" name="name" class="form__field-input" placeholder="Введите имя" id="_name">
-                </div>
-                <div class="form__field error">
-                    <label for="_password" class="form__field-label">Пароль:</label>
-                    <input type="password" name="password" class="form__field-input" placeholder="Введите пароль" id="_password">
-                    <p class="form__field-info">Пароль должен быть больше 6 символов</p>
-                </div>
-                <div class="form__field">
-                    <label for="_password_confirm" class="form__field-label">Повторите пароль:</label>
-                    <input type="password" name="password_confirm" class="form__field-input" placeholder="Повторите пароль" id="_password_confirm">
-                </div>
-
-                <div class="form__field">
-                    <input type="submit" name="submit" class="form__field-submit submit" value="Зарегистрироваться">
+                    <input type="submit" name="submit" class="form__field-submit submit submit_inverse" value="Купить">
                 </div>
             </form>
         </div>
@@ -69,8 +68,20 @@
     <!-- Temp BR -->
     <br>
     <br>
-    <br>
-    <br>
-    <br>
+
+<script>
+
+[].forEach.call( document.querySelectorAll( '.plans .form__field-block' ), function ( element ) {
+  element.addEventListener( 'click', function () {
+    [].forEach.call(document.querySelectorAll( '.plans .form__field-block' ),function(item){
+      if(item.classList.contains('active')) {
+        item.classList.remove('active');
+      }
+    });
+    element.classList.add('active');
+  }, false );
+});
+
+</script>
 </body>
 </html>

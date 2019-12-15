@@ -1,57 +1,58 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 <head>
-	<meta charset="UTF-8">
-	<title>Contacts</title>
-	<style>
-	#contacts{
-	float: left;
-	width: 35%;
-	height: 200px;
-}
-	#obsv{
-	float: right;
-	width: 30%;
-	height: 200px;
-}
-    #pochta{
-	float: right;
-	width: 35%;
-	height: 200px;
-}
-	#back{
-		font-weight: 600
-	}
-	</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Электронная библиотека</title>
+
+    <link href="https://fonts.googleapis.com/css?family=Comfortaa:400,700|Open+Sans:400,700&display=swap&subset=cyrillic" rel="stylesheet">    
+    
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/app.css?v=1.0">
+
+    <link rel="icon" type="image/png" href="favicon.png" />
+    <link rel="apple-touch-icon" href="favicon.png"/>
 </head>
 <body>
-	<div id="contacts">
-		<h1>
-			Позвоните нам
-		</h1>
-		<p>Есть вопросы? Мы поможем!</p><br>
-		<p><a href="">8-(777)-777-777-5</a> для Москвы</p>
-		<a href="">8-(777)-777-777-4</a> для регионов
-	</div>
-	<div id="obsv">
-		<h1>
-			Обратная связь
-		</h1>
-		Поделитесь мнением о нашей работе<br> и помогите нам стать лучше!<br>
-		<p><a href="https://vk.com/im?peers=13940490&sel=c21">Оставить отзыв</a></p>	
-	</div>
-	<div id="pochta">
-		<h1>
-			Напишите нам
-		</h1>
-		Идеи? Предложения?<br>
-         Мы открыты для любых вопросов!
-         <p>Написать на <a href="">24@bitbaybit.ru</a></p><br>
-		<div id="back">
-	       <p> <a href="index.html"> <<-- Вернуться назад </a></p>
+    <div class="section header">
+        <div class="width grid header_container">
+            <a href="#" class="logo"><h1>ebook</h1></a>
+            <ul class="menu header__menu">
+                <li class="header__menu-item"><a href="index.html" class="header__menu-link">Главная</a></li>
+                <li class="header__menu-item"><a href="list_books.html" class="header__menu-link">Список книг</a></li>
+                <li class="header__menu-item"><a href="subscribe.html" class="header__menu-link">Подписка</a></li>
+                <li class="header__menu-item"><a href="about_us.html" class="header__menu-link">О нас</a></li>
+                <li class="header__menu-item"><a href="contacts.html" class="header__menu-link active">Контакты</a></li>
+            </ul>
+            <ul class="menu_auth header__menu_mini">
+                <li class="header__menu_mini_auth-item">
+                    <a href="reg.html" class="header__menu_mini_auth-link">Регистрация</a>
+                </li>
+                <li class="header__menu_mini_auth-item">/</li>
+                <li class="header__menu_mini_auth-item">
+                    <a href="auth.html" class="header__menu_mini_auth-link">Вход</a>
+                </li>
+            </ul>
         </div>
-	</div>
-	
+    </div>
 
+    <div class="section main">
+        <div class="width main_container list-books mini-big grid">
+            <ul class="left sider-menu">
+                <h3 class="title">Информация</h3>
+                <li><a href="about_us.html" class="sider-menu-link">О нас</a></li>
+                <li><a href="contacts.html" class="sider-menu-link active">Контакты</a></li>
+            </ul>
+            <div class="right text_wrapper">
+                <h3 class="title">Контакты</h3>
+                <h4 class="subtitle">Обратная связь</h4>
+                <div class="content">
+                    <p>Оставьте свое обращение и помогите нам стать лучше</p>
+                    <p>Телефон: <b>+7 (919) 154 93-55</b></p>
+                    <p>Email: <b>feod1999@gmail.com</b></p>
+                </div>
+            </div>
+        </div>
+    </div>
 </body>
 </html>
