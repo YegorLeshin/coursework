@@ -65,10 +65,10 @@ public class BookController {
         this.bookConverter = bookConverter;
     }
 
-    @Autowired
-    public void setBookService(BookService bookService) {
-        this.bookService = bookService;
-    }
+//    @Autowired
+//    public void setBookService(BookService bookService) {
+//        this.bookService = bookService;
+//    }
 
     @Autowired
     public void setBookJDBCService(BookJDBCService bookJDBCService) {

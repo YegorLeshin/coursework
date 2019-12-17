@@ -23,8 +23,8 @@ public class BookAttributeValueDtoConverter implements Converter<BookAttributeVa
     @PostConstruct
     public void asdas (){
 
-        File file1 = ResourceUtils.getFile("classpath:img.png");
-        byte[] bytes = Files.readAllBytes(file1.toPath());
+       // File file1 = ResourceUtils.getFile("classpath:img.png");
+     //   byte[] bytes = Files.readAllBytes(file1.toPath());
 
 
 

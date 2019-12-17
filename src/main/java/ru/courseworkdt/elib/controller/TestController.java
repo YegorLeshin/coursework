@@ -6,10 +6,15 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 import ru.courseworkdt.elib.Model.Book;
 import ru.courseworkdt.elib.Model.Category;
+import ru.courseworkdt.elib.Model.Download;
+import ru.courseworkdt.elib.Model.User;
 import ru.courseworkdt.elib.converters.dto.BookDtoConverter;
 import ru.courseworkdt.elib.dto.BookDto;
+import ru.courseworkdt.elib.repository.BookRepository;
+import ru.courseworkdt.elib.repository.DownloadRepository;
 import ru.courseworkdt.elib.service.BookService;
 import ru.courseworkdt.elib.service.CategoryService;
+import ru.courseworkdt.elib.service.UserService;
 import ru.courseworkdt.elib.service.impl.CategoryServiceImpl;
 import ru.courseworkdt.elib.service.jdbc.BookJDBCService;
 
@@ -21,6 +26,9 @@ public class TestController {
 
     @Autowired
     private CategoryService categoryService;
+    private BookRepository bookRepository;
+    private DownloadRepository downloadRepository;
+    private UserService userService;
     private BookService bookService;
     private BookJDBCService bookJDBCService;
 
@@ -28,29 +36,28 @@ public class TestController {
     @GetMapping("/list_books")
     public String list_books (Model model, @RequestParam("categoryName") String categoryName) {
         List<Category> category = categoryService.findAll();
-     //  List<Book> books = bookService.findAll();
-       model.addAttribute("category", category);
-     //  model.addAttribute("book", books);
+        List<Book> books = bookRepository.findAll();
+        model.addAttribute("category", category);
+        model.addAttribute("books", books);
         return "list_books";
     }
 
-    @GetMapping("/category/{categoryId}/books")
-    public String list_boo (Model model, @PathVariable("categoryId") Long categoryId,
-                            @RequestBody BookFilter bookFilter) {
-
-        List<Book> booksByCategory = bookJDBCService.getBooksByCategory(categoryId, bookFilter);
-        model.addAttribute("category", booksByCategory);
-        return "list_books";
+    @GetMapping("/view_book/{id}")
+    public String book(Model model, @PathVariable int id) {
+        Book book = bookService.findById(id);
+        model.addAttribute("book", book);
+        return "view_book";
     }
-
 
     @GetMapping("/index")
     public String index (Model model) {
+        List<Book> topBooks = bookRepository.findTop10ByOrderByRatingDesc();
+        model.addAttribute("topBooks", topBooks);
         return "index";
     }
 
     @GetMapping("/subscribe")
-    public String subscribe (Model model) {
+    public String subscribe(Model model) {
         return "subscribe";
     }
 
@@ -60,7 +67,11 @@ public class TestController {
     }
 
     @GetMapping("/account")
-    public String account (Model model) {
+    public String account (Model model, @RequestParam("id") int id) {
+        List<Book> books = bookRepository.findAllById(downloadRepository.findAllById(id));
+        User user = userService.findById(id);
+        model.addAttribute("books", books);
+        model.addAttribute("user", user);
         return "account";
     }
 
@@ -71,6 +82,8 @@ public class TestController {
 
     @GetMapping("/reg")
     public String reg (Model model) {
+        User user = new User();
+        userService.create(user);
         return "reg";
     }
 
@@ -79,9 +92,24 @@ public class TestController {
         return "contacts";
     }
 
-    @GetMapping("/view_book")
-    public String view_book (Model model) {
-        return "view_book";
+    @Autowired
+    public void setCategoryService(CategoryService categoryService) {
+        this.categoryService = categoryService;
     }
-
+    @Autowired
+    public void setBookRepository(BookRepository bookRepository) {
+        this.bookRepository = bookRepository;
+    }
+    @Autowired
+    public void setDownloadRepository(DownloadRepository downloadRepository) {
+        this.downloadRepository = downloadRepository;
+    }
+    @Autowired
+    public void setUserService(UserService userService) {
+        this.userService = userService;
+    }
+    @Autowired
+    public void setBookService(BookService bookService) {
+        this.bookService = bookService;
+    }
 }
