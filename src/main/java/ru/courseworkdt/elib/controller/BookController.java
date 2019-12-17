@@ -15,6 +15,7 @@ import ru.courseworkdt.elib.service.jdbc.BookJDBCService;
 import java.util.List;
 import java.util.stream.Collectors;
 
+
 @RestController
 public class BookController {
 

@@ -1,82 +1,92 @@
 <!DOCTYPE html>
-<html lang="en">	
+<html lang="ru" xmlns:th="http://www.springframework.org/schema/data/jaxb">
 <head>
-	<meta charset="UTF-8">
-	<title>БитБайБит</title>
-	<link rel="stylesheet" href="../../../../../../../Desktop/Курсач/style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Электронная библиотека</title>
+
+    <link href="https://fonts.googleapis.com/css?family=Comfortaa:400,700|Open+Sans:400,700&display=swap&subset=cyrillic" rel="stylesheet">
+
+    <link href="../static/css/normalize.css" th:href="@{/css/normalize.css}" rel="stylesheet" />
+    <link  href="../static/css/app.css?v=1.0" th:href="@{/css/app.css}"  rel="stylesheet">
+
+    <link rel="icon" type="image/png" href="favicon.png" />
+    <link rel="apple-touch-icon" href="favicon.png"/>
 </head>
-
 <body>
-<div id="header">	
-	
-	<div id="logo">
-		<a href="#"><img src="img/241254.jpg" alt="Internet Magazine" width="300px" height="130px"></a>
-		<p><b>MyBooks</b>
-		</p>
-	</div>
+    <div class="section header">
+        <div class="width grid header_container">
+            <a href="#" class="logo"><h1>ebook</h1></a>
+            <ul class="menu header__menu">
+                <li class="header__menu-item"><a href="/index" class="header__menu-link active">Главная</a></li>
+                <li class="header__menu-item"><a href="/list_books" class="header__menu-link">Список книг</a></li>
+                <li class="header__menu-item"><a href="/subscribe" class="header__menu-link">Подписка</a></li>
+                <li class="header__menu-item"><a href="/about_us" class="header__menu-link">О нас</a></li>
+                <li class="header__menu-item"><a href="/contacts" class="header__menu-link">Контакты</a></li>
+            </ul>
+            <ul class="menu_auth header__menu_mini">
+                <li class="header__menu_mini_auth-item">
+                    <a href="/reg" class="header__menu_mini_auth-link">Регистрация</a>
+                </li>
+                <li class="header__menu_mini_auth-item">/</li>
+                <li class="header__menu_mini_auth-item">
+                    <a href="/auth" class="header__menu_mini_auth-link">Вход</a>
+                </li>
+            </ul>
+        </div>
+    </div>
 
-	
-	<div id="contact">
-		<p><b>Контактный телефон 
-		<br> 8(999)-999-99-99</b>
-		</p>
-		<a href="reg.html"><button type="button" style="font-weight: bold; font-size: 17px; margin-left: 300px; padding: 5px 10px; margin-top: 20px;">Войти</button></a>
-	</div>
+    <div class="section main welcome">
+        <div class="width main_container">
+            <h2 class="title main_title">Электронная <b>библиотека</b></h2>
+            <h3 class="subtitle main_subtitle">Доступное и универсальное решение для Вас</h3>
+        </div>
 
-	<div id="graph">
-		<ul>
-			<li>Пн</li>
-			<li>Вт</li>
-			<li>Ср</li>
-			<li>Чт</li>
-			<li>Пт</li>
-			<li class="img">Сб</li>
-			<li class="img">Вс</li>
-		</ul>
-	
-	</div>
-</div>
+        <div class="slider_books grid">
+            <div class="slider_books-item grid">
+                <img src="../static/images/nisi.jpg" class="slider_books-item-photo" alt="НИ СЫ" width="275" height="400">
+                <div class="slider_books-item-content">
+                    <div class="slider_books-item-wrapper">
+                        <div class="slider_books-item-info">
+                            <span class="rating">
+                                4.3 <i></i>
+                            </span>
+                            <span class="pages">
+                                3313 стр.
+                            </span>
+                        </div>
+                        <h2 class="slider_books-item-title">
+                            НИ СЫ. Восточная мудрость, которая гласит: будь уверен в своих силах ...
+                        </h2>
+                        <span class="slider_books-item-author">Автор: Джен Синсеро</span>
+                        <span class="slider_books-item-type">Тип: .pdf</span>
+                    </div>
+                    <a href="#" class="submit slider_books-item-submit">Скачать</a>
+                </div>
+            </div>
 
-
-<div id="menu">
-	<ul>
-		<li><a href="#">Главная</a></li>
-		<li><a href="../../../../../../../Desktop/Курсач/about.html">О нас</a></li>
-		<li><a href="#">Подписка</a></li>
-		<li><a href="#">Категории</a></li>
-		<li><a href="../../../../../../../Desktop/Курсач/contacts.html">Контакты</a></li>
-	</ul>
-</div>
-
-	<div id="content">
-		<div id="leftsidebar">
-			<form action="" method="post" class="search">
-  <input type="search" name="" placeholder="поиск" class="input" />
-  <input type="submit" name="" value="" class="submit" />
-			</form>
-		</div>
-
-		<div id="rightsidebar">
-			<p>Добро пожаловать в MyBooks!</p>
-			<br>
-			<img src="img/foto2.jpg" alt="#" width="380px">
-		</div>
-
-		<div id="com">
-			<img src="img/content.jpg" alt="#" height="300px" width="535px">
-		</div>
-	</div>
-	<hr>
-	<div id="footer">
-		<p>Популярные категории</p>
-		<ul>
-			<li><a href="#"><<img src="img/foto3.jpg" alt="#" width="239px" height="194px"></a></li>
-			<li><a href="#"><img src="img/foto4.jpg" alt="#"  width="239px" height="194px"></a></li>
-			<li><a href="#"><img src="img/video.jpg" alt="#"  width="239px" height="194px"></a></li>
-			<li><a href="#"><img src="img/prin.jpg" alt="#"  width="239px" height="194px"></a></li>
-		</ul>
-	</div>
+            <div class="slider_books-item grid">
+                <img src="../static/images/nechto.jpg" class="slider_books-item-photo" alt="НИ СЫ" width="275" height="400">
+                <div class="slider_books-item-content">
+                    <div class="slider_books-item-wrapper">
+                        <div class="slider_books-item-info">
+                            <span class="rating">
+                                4.3 <i></i>
+                            </span>
+                            <span class="pages">
+                                3313 стр.
+                            </span>
+                        </div>
+                        <h2 class="slider_books-item-title">
+                            Нечто из Норт Ривер
+                        </h2>
+                        <span class="slider_books-item-author">Автор: Джен Синсеро</span>
+                        <span class="slider_books-item-type">Тип: .pdf</span>
+                    </div>
+                    <a href="#" class="submit slider_books-item-submit">Скачать</a>
+                </div>
+            </div>
+        </div>
+    </div>
 </body>
-
-
 </html>

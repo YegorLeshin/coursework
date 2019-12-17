@@ -7,7 +7,10 @@ import lombok.Data;
 public class BookDto {
     private Long id;
     private String title;
-    private int year;
+    private String description;
     private String author;
     private String genre;
+    private int capacity;
+    private double rating;
+    private byte[] image;
 }

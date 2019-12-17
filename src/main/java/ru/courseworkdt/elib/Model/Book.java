@@ -21,14 +21,23 @@ public class Book {
     @Column(name = "title")
     private String title;
 
-    @Column(name = "year")
-    private int year;
+    @Column(name = "description")
+    private String description;
 
     @Column(name = "author")
     private String author;
 
-    @Column(name = "genre")
+    @Column(name = "format")
     private String genre;
+
+    @Column(name = "capacity")
+    private int capacity;
+
+    @Column(name = "rating")
+    private double rating;
+
+    @Column(name = "image")
+    private byte[] image;
 
     @ManyToOne(fetch = FetchType.EAGER, cascade = {CascadeType.ALL})
     @JoinColumn(name = "category_id", nullable = false)

@@ -15,7 +15,10 @@ public class BookDtoConverter implements Converter<Book, BookDto> {
         bookDto.setGenre(book.getAuthor());
         bookDto.setId(book.getId());
         bookDto.setTitle(book.getTitle());
-        bookDto.setYear(book.getYear());
+        bookDto.setDescription(book.getDescription());
+        bookDto.setCapacity(book.getCapacity());
+        bookDto.setRating(book.getRating());
+        bookDto.setImage(book.getImage());
         return bookDto;
     }
 }

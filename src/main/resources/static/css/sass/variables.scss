@@ -1,0 +1,21 @@
+// fonts
+$font_normal: 'Alegreya Sans', Arial, Helvetica, sans-serif;
+$font_bold: 'Alegreya Sans Bold', Arial, Helvetica, sans-serif;
+$font_medium: 'Alegreya Sans Medium', Arial, Helvetica, sans-serif;
+$font_light: 'Alegreya Sans Light', Arial, Helvetica, sans-serif;
+$font_jura: 'Jura', Arial, Helvetica, sans-serif;
+$font_glacial: 'Glacial Indifference', Arial, Helvetica, sans-serif;
+
+// colors
+
+$color_blue: rgb(38, 29, 93);
+$color_blue_mod: rgb(34, 36, 109);
+$color_gray: #333333;
+
+
+// mixins
+
+@mixin uplayer {
+  position: relative;
+  z-index: 99;
+}

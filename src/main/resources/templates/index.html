@@ -1,14 +1,14 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="ru" xmlns:th="http://www.springframework.org/schema/data/jaxb">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Электронная библиотека</title>
 
-    <link href="https://fonts.googleapis.com/css?family=Comfortaa:400,700|Open+Sans:400,700&display=swap&subset=cyrillic" rel="stylesheet">    
-    
-    <link rel="stylesheet" href="css/normalize.css">
-    <link rel="stylesheet" href="css/app.css?v=1.0">
+    <link href="https://fonts.googleapis.com/css?family=Comfortaa:400,700|Open+Sans:400,700&display=swap&subset=cyrillic" rel="stylesheet">
+
+    <link href="../static/css/normalize.css" th:href="@{/css/normalize.css}" rel="stylesheet" />
+    <link  href="../static/css/app.css?v=1.0" th:href="@{/css/app.css}"  rel="stylesheet">
 
     <link rel="icon" type="image/png" href="favicon.png" />
     <link rel="apple-touch-icon" href="favicon.png"/>
@@ -18,19 +18,19 @@
         <div class="width grid header_container">
             <a href="#" class="logo"><h1>ebook</h1></a>
             <ul class="menu header__menu">
-                <li class="header__menu-item"><a href="index.html" class="header__menu-link active">Главная</a></li>
-                <li class="header__menu-item"><a href="list_books.html" class="header__menu-link">Список книг</a></li>
-                <li class="header__menu-item"><a href="subscribe.html" class="header__menu-link">Подписка</a></li>
-                <li class="header__menu-item"><a href="about_us.html" class="header__menu-link">О нас</a></li>
-                <li class="header__menu-item"><a href="contacts.html" class="header__menu-link">Контакты</a></li>
+                <li class="header__menu-item"><a href="/index" class="header__menu-link active">Главная</a></li>
+                <li class="header__menu-item"><a href="/list_books" class="header__menu-link">Список книг</a></li>
+                <li class="header__menu-item"><a href="/subscribe" class="header__menu-link">Подписка</a></li>
+                <li class="header__menu-item"><a href="/about_us" class="header__menu-link">О нас</a></li>
+                <li class="header__menu-item"><a href="/contacts" class="header__menu-link">Контакты</a></li>
             </ul>
             <ul class="menu_auth header__menu_mini">
                 <li class="header__menu_mini_auth-item">
-                    <a href="reg.html" class="header__menu_mini_auth-link">Регистрация</a>
+                    <a href="/reg" class="header__menu_mini_auth-link">Регистрация</a>
                 </li>
                 <li class="header__menu_mini_auth-item">/</li>
                 <li class="header__menu_mini_auth-item">
-                    <a href="auth.html" class="header__menu_mini_auth-link">Вход</a>
+                    <a href="/auth" class="header__menu_mini_auth-link">Вход</a>
                 </li>
             </ul>
         </div>
@@ -44,7 +44,7 @@
 
         <div class="slider_books grid">
             <div class="slider_books-item grid">
-                <img src="uploads/nisi.jpg" class="slider_books-item-photo" alt="НИ СЫ" width="275" height="400">
+                <img src="../static/images/nisi.jpg" class="slider_books-item-photo" alt="НИ СЫ" width="275" height="400">
                 <div class="slider_books-item-content">
                     <div class="slider_books-item-wrapper">
                         <div class="slider_books-item-info">
@@ -66,7 +66,7 @@
             </div>
 
             <div class="slider_books-item grid">
-                <img src="uploads/nechto.jpg" class="slider_books-item-photo" alt="НИ СЫ" width="275" height="400">
+                <img src="../static/images/nechto.jpg" class="slider_books-item-photo" alt="НИ СЫ" width="275" height="400">
                 <div class="slider_books-item-content">
                     <div class="slider_books-item-wrapper">
                         <div class="slider_books-item-info">

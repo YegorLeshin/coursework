@@ -13,9 +13,12 @@ public class BookConverter implements Converter<BookDto, Book> {
         Book book = new Book();
         book.setId(bookDto.getId());
         book.setTitle(bookDto.getTitle());
-        book.setYear(bookDto.getYear());
+        book.setDescription(bookDto.getDescription());
         book.setAuthor(bookDto.getAuthor());
         book.setGenre(bookDto.getGenre());
+        book.setCapacity(bookDto.getCapacity());
+        book.setRating(bookDto.getRating());
+        book.setImage(bookDto.getImage());
         return book;
     }
 }
