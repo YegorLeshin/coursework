@@ -15,7 +15,7 @@ public class BookConverter implements Converter<BookDto, Book> {
         book.setTitle(bookDto.getTitle());
         book.setDescription(bookDto.getDescription());
         book.setAuthor(bookDto.getAuthor());
-        book.setGenre(bookDto.getGenre());
+        book.setFormat(bookDto.getFormat());
         book.setCapacity(bookDto.getCapacity());
         book.setRating(bookDto.getRating());
         book.setImage(bookDto.getImage());

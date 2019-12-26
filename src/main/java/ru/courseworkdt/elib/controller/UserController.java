@@ -28,6 +28,11 @@ public class UserController {
         return userDtoConverter.convert(userService.create(user));
     }
 
+    @PostMapping("/user/{id}")
+    public UserDto getUserByID(@PathVariable("id") Long id) {
+        return userDtoConverter.convert(userService.findById(id));
+    }
+
     @PutMapping("/user")
     public UserDto updateUser(@RequestBody UserDto userDto) {
         User user = userConverter.convert(userDto);

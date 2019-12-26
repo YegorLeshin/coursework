@@ -9,7 +9,7 @@ public class BookDto {
     private String title;
     private String description;
     private String author;
-    private String genre;
+    private String format;
     private int capacity;
     private double rating;
     private byte[] image;

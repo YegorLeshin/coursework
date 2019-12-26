@@ -46,13 +46,15 @@ public class TestController {
     public String book(Model model, @PathVariable int id) {
         Book book = bookService.findById(id);
         model.addAttribute("book", book);
+        List<Book> book2 = bookRepository.findTop10ByOrderByRatingDesc();
+        model.addAttribute("book2", book2);
         return "view_book";
     }
 
     @GetMapping("/index")
     public String index (Model model) {
-        List<Book> topBooks = bookRepository.findTop10ByOrderByRatingDesc();
-        model.addAttribute("topBooks", topBooks);
+       List<Book> topBooks = bookRepository.findTop10ByOrderByRatingDesc();
+       model.addAttribute("topBooks", topBooks);
         return "index";
     }
 
@@ -68,10 +70,10 @@ public class TestController {
 
     @GetMapping("/account")
     public String account (Model model, @RequestParam("id") int id) {
-        List<Book> books = bookRepository.findAllById(downloadRepository.findAllById(id));
-        User user = userService.findById(id);
-        model.addAttribute("books", books);
-        model.addAttribute("user", user);
+       // List<Book> books = bookRepository.findAllById(downloadRepository.findAllById(id));
+      //  User user = userService.findById(id);
+      //  model.addAttribute("books", books);
+      //  model.addAttribute("user", user);
         return "account";
     }
 
@@ -82,8 +84,8 @@ public class TestController {
 
     @GetMapping("/reg")
     public String reg (Model model) {
-        User user = new User();
-        userService.create(user);
+       // User user = new User();
+      //  userService.create(user);
         return "reg";
     }
 

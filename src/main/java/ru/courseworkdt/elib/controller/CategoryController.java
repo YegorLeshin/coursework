@@ -17,7 +17,7 @@ public class CategoryController {
     private CategoryDtoConverter categoryDtoConverter;
     private CategoryConverter categoryConverter;
 
-    @GetMapping("/categorys")
+    @GetMapping("/category")
     public List<Category> categoriesAll() {return categoryService.findAll();
     }
 
@@ -25,6 +25,11 @@ public class CategoryController {
     public CategoryDto addCategory(@RequestBody CategoryDto categoryDto) {
         Category category = categoryConverter.convert(categoryDto);
         return categoryDtoConverter.convert(categoryService.create(category));
+    }
+
+    @PostMapping("/category/{id}")
+    public CategoryDto getCategoryByID(@PathVariable("id") Long id) {
+        return categoryDtoConverter.convert(categoryService.findById(id));
     }
 
     @PutMapping("/category")

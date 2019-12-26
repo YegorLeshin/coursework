@@ -28,6 +28,11 @@ public class LicenseController {
         return licenseDtoConverter.convert(licenseService.create(license));
     }
 
+    @PostMapping("/license/{id}")
+    public LicenseDto getLicenceByID(@PathVariable("id") Long id) {
+        return licenseDtoConverter.convert(licenseService.findById(id));
+    }
+
     @PutMapping("/licence")
     public LicenseDto updateLicense(@RequestBody LicenseDto licenseDto) {
         License license = licenseConverter.convert(licenseDto);

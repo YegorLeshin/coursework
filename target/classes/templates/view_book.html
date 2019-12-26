@@ -39,26 +39,18 @@
     <div class="section main">
         <div class="width main_container view-book grid">
             <div class="photo">
-                <img src="../static/images/nisi.jpg" alt="НИ СЫ" width="300" height="450">
+                <img th:src="@{/images/nisi.jpg}" alt="НИ СЫ" width="300" height="450">
                 <a class="submit" href="#">Скачать</a>
             </div>
-            <div class="right">
-                <h2 class="title view-book_title">НИ СЫ. Восточная мудрость, которая гласит: будь уверен в своих силах и не позволяйсомнениям мешать тебе двигаться вперед</h2>
-                <span class="view-book-span rating">Рейтинг: 4.3</span>
-                <span class="view-book-span">Автор: Джен Синсеро</span>
-                <span class="view-book-span">Объем: 3313 стр.</span>
-                <span class="view-book-span">Тип: .pdf</span>
+            <div class="right" th:each="book : ${book}">
+                <h2 class="title view-book_title" th:text="${book.title}"></h2>
+                <span class="view-book-span rating" >Рейтинг: </span> <span class="view-book-span rating"  th:text="${book.rating}" ></span>
+                 <span class="view-book-span">Автор: </span></span><span class="view-book-span" th:text="${book.author}"></span>
+                <span class="view-book-span">Объём: </span><span class="view-book-span" th:text="${book.capacity}">Объем: 3313 стр.</span>
+                <span class="view-book-span">Формат: </span><span class="view-book-span" th:text="${book.format}">Тип: .pdf</span>
                 <h3 class="subtitle view-book_subtitle">Описание книги:</h3>
-                <div class="content">
-                    <p>Эта книга – культовый бестселлер – дерзкая и невероятно искренняя, она заставляет проснуться, засунуть свои страхи куда подальше и начать действовать. Джен Синсеро испытала на себе все известные методики личной трансформации, выбрала 25 подходов, которые дали результат, и превратила их в систему полного преображения жизни.</p>
-                    <p>Если что-то и может заставить вас по максимуму реализовать свой потенциал, это она – невероятная, яркая, прорывная книга от знаменитого тренера по мотивации и успеху.</p>
-                    <p>Из этой книги вы узнаете:</p>
-                    <p>- как не обращать внимания на эго и жить в своё удовольствие;</p>
-                    <p>- как начать любить себя и всё, что делаешь;</p>
-                    <p>- как изменить свои убеждения, чтобы изменить реальность;</p>
-                    <p>- почему надежда на лучшее притягивает удачу;</p>
-                    <p>- почему нужно заботиться о себе больше, чем о других.</p>
-                    <p>Также выходит под названиями «Убить Большого Соню. Как заставить замолчать свою „внутреннюю сволочь“ и направить жизнь по лучшему из сценариев» и «Будь дерзким! Как перестать сомневаться в собственном величии и сделать жизнь грандиозной».</p>
+                <div class="content" th:text="${book.description}" >
+                    <p></p>
                 </div>
             </div>
         </div>
@@ -68,93 +60,21 @@
         <div class="width">
             <h3 class="subtitle">Другие книги:</h3>
             <div class="right list-books-container">
-                <a class="list-books-item" href="#">
-                    <img src="../static/images/nisi.jpg" class="slider_book-item-photo" alt="НИ СЫ" width="190" height="305">
+                <a class="list-books-item" href="#" th:each="book2 : ${book2}">
+                    <img th:src="@{/images/nisi.jpg}" class="slider_book-item-photo" alt="НИ СЫ" width="190" height="305">
                     <div>
-                        <div class="list-books-item-info">
-                            <span class="rating">
-                                4.3 <i></i>
+                        <div class="list-books-item-info" th::text="${book2.rating}"  >
+                            <span class="rating" >
+                                 <i></i>
                             </span>
-                            <span class="pages">
-                                3313 стр.
+                            <span class="pages" th::text="${book2.capacity}" >
+                                3313
                             </span>
                         </div>
-                        <h2 class="list-books-item-title">
+                        <h2 class="list-books-item-title" th::text="${book2.title}">
                             НИ СЫ. Восточная мудрость, которая гласит: будь уверен в своих силах ...
                         </h2>
-                        <span class="list-books-item-author">Автор: Джен Синсеро</span>
-                    </div>
-                </a>
 
-                <a class="list-books-item" href="#">
-                    <img src="../static/images/nechto.jpg" class="list-books-item-photo" alt="НИ СЫ" width="190" height="305">
-                    <div>
-                        <div class="list-books-item-info">
-                            <span class="rating">
-                                4.3 <i></i>
-                            </span>
-                            <span class="pages">
-                                3313 стр.
-                            </span>
-                        </div>
-                        <h2 class="list-books-item-title">
-                            Нечто из Норт Ривер
-                        </h2>
-                        <span class="list-books-item-author">Автор: Джен Синсеро</span>
-                    </div>
-                </a>
-
-                <a class="list-books-item" href="#">
-                    <img src="../static/images/nisi.jpg" class="slider_book-item-photo" alt="НИ СЫ" width="190" height="305">
-                    <div>
-                        <div class="list-books-item-info">
-                            <span class="rating">
-                                4.3 <i></i>
-                            </span>
-                            <span class="pages">
-                                3313 стр.
-                            </span>
-                        </div>
-                        <h2 class="list-books-item-title">
-                            НИ СЫ. Восточная мудрость, которая гласит: будь уверен в своих силах ...
-                        </h2>
-                        <span class="list-books-item-author">Автор: Джен Синсеро</span>
-                    </div>
-                </a>
-
-                <a class="list-books-item" href="#">
-                    <img src="../static/images/nisi.jpg" class="slider_book-item-photo" alt="НИ СЫ" width="190" height="305">
-                    <div>
-                        <div class="list-books-item-info">
-                            <span class="rating">
-                                4.3 <i></i>
-                            </span>
-                            <span class="pages">
-                                3313 стр.
-                            </span>
-                        </div>
-                        <h2 class="list-books-item-title">
-                            НИ СЫ. Восточная мудрость, которая гласит: будь уверен в своих силах ...
-                        </h2>
-                        <span class="list-books-item-author">Автор: Джен Синсеро</span>
-                    </div>
-                </a>
-
-                <a class="list-books-item" href="#">
-                    <img src="../static/images/nisi.jpg" class="slider_book-item-photo" alt="НИ СЫ" width="190" height="305">
-                    <div>
-                        <div class="list-books-item-info">
-                            <span class="rating">
-                                4.3 <i></i>
-                            </span>
-                            <span class="pages">
-                                3313 стр.
-                            </span>
-                        </div>
-                        <h2 class="list-books-item-title">
-                            НИ СЫ. Восточная мудрость, которая гласит: будь уверен в своих силах ...
-                        </h2>
-                        <span class="list-books-item-author">Автор: Джен Синсеро</span>
                     </div>
                 </a>
             </div>

@@ -30,6 +30,11 @@ public class BookController {
         return all;
     }
 
+    @PostMapping("/book/{id}")
+    public BookDto getBookByID(@PathVariable("id") Long id) {
+        return bookDtoConverter.convert(bookService.findById(id));
+    }
+
     @PostMapping("/book")
     public BookDto addBook(@RequestBody BookDto bookDto) {
         Book book = bookConverter.convert(bookDto);
@@ -65,10 +70,10 @@ public class BookController {
         this.bookConverter = bookConverter;
     }
 
-//    @Autowired
-//    public void setBookService(BookService bookService) {
-//        this.bookService = bookService;
-//    }
+    @Autowired
+    public void setBookService(BookService bookService) {
+        this.bookService = bookService;
+    }
 
     @Autowired
     public void setBookJDBCService(BookJDBCService bookJDBCService) {

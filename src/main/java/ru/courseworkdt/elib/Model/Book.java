@@ -28,7 +28,7 @@ public class Book {
     private String author;
 
     @Column(name = "format")
-    private String genre;
+    private String format;
 
     @Column(name = "capacity")
     private int capacity;

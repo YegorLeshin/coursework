@@ -12,7 +12,8 @@ import ru.courseworkdt.elib.service.DownloadService;
 import java.util.List;
 
 @RestController
-public class DownloadController {
+public class
+DownloadController {
 
     private DownloadService downloadService;
     private DownloadConverter downloadConverter;
